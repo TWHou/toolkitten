@@ -84,7 +84,9 @@ def binge():
 
 binge()
 
-def sort_words(words = []):
+def sort_words(words = None):
+  if words == None:
+    words = []
   word = input('Give me a word: ').strip()
   if word:
     words.append(word)
@@ -92,6 +94,58 @@ def sort_words(words = []):
   else:
     words.sort()
     print(words)
-    return
+    return words
 
 sort_words()
+
+def print_toc(content):
+  print('Tale of Contents'.center(60))
+  for chapter in content:
+    print(chapter[0].ljust(53) + 'Page ' + str(chapter[1]))
+
+content = [
+  ['Chapter 1: Getting Started', 1],
+  ['Chapter 2: Numbers', 9],
+  ['Chapter 3: Letters', 13]
+]
+
+print_toc(content)
+
+def print_moo(n):
+  for i in range(n):
+    print('moo')
+
+def old_roman(n):
+  if n < 1 or n > 3000:
+    return f'Error: {n} is not between 1 and 3000.'
+  roman = ''
+  letters = [
+    [1000, "M"],
+    [500, "D"],
+    [100, "C"],
+    [50, "L"],
+    [10, "X"],
+    [5, "V"],
+    [1, "I"]
+  ]
+  for letter in letters:
+    while n >= letter[0]:
+      n -= letter[0]
+      roman += letter[1]
+  return roman
+
+def new_roman(n):
+  if n < 1 or n > 3000:
+    return f'Error: {n} is not between 1 and 3000.'
+  pairs = [
+    ['DCCCC', 'CM'],
+    ['CCCC', 'CD'],
+    ['LXXXX', 'XC'],
+    ['XXXX', 'XL'],
+    ['VIIII', 'IX'],
+    ['IIII', 'IV']
+  ]
+  roman = old_roman(n)
+  for pair in pairs:
+    roman = roman.replace(pair[0], pair[1])
+  return roman
