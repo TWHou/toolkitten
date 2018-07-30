@@ -14,11 +14,6 @@ print(f'I am {seconds} seconds old.')
 andreea = 48618000 / 60 / 60 / 24 / 365
 print(f'Andreea is {andreea} years old.')
 
-# How many days does it take for a 32-bit system to timeout, if it has a bug with integer overflow?
-# How about a 64-bit system?
-# Calculate your age accurately based on your birthday (maybe use time of day
-# e.g. 8:23am if you know it, use 12:00 noon midday) - you will need Python modules.
-
 ### Day 3 ###
 
 first = input("What is your first name? ")
@@ -39,6 +34,8 @@ print('Chapter 3: Letters'.ljust(53) + 'page 13')
 
 ### Day 4 ###
 
+## 99 Bottles ##
+
 bottles = 100
 while bottles > 0:
   print(f'{bottles} bottles of beer on the wall, {bottles} bottles of beer.')
@@ -46,6 +43,8 @@ while bottles > 0:
   print(f'Take one down, pass it around, {bottles} bottles of beer on the wall...')
 print('No more bottles of beer on the wall, no more bottles of beer.')
 print('Go to the store and buy some more, 99 bottles of beer on the wall...')
+
+## Deaf Grandma ##
 
 def grandma(bye):
   say = input('Say something to Grandma: ')
@@ -65,6 +64,8 @@ def grandma(bye):
 
 grandma(0)
 
+## Print Leap Years ##
+
 def leap_counter():
   start = int(input('Enter start year: '))
   end = int(input('Enter end year: '))
@@ -78,11 +79,15 @@ def leap_counter():
 
 leap_counter()
 
+## Calculation in Life ##
+
 def binge():
   hours = int(input('How many hours do you have? '))
   print(f'You might be able to sqeeze in {hours * 2} episodes.')
 
 binge()
+
+## Sort Given Words ##
 
 def sort_words(words = None):
   if words == None:
@@ -98,6 +103,8 @@ def sort_words(words = None):
 
 sort_words()
 
+## Table of Content ##
+
 def print_toc(content):
   print('Tale of Contents'.center(60))
   for chapter in content:
@@ -111,9 +118,13 @@ content = [
 
 print_toc(content)
 
+## Print Moos ##
+
 def print_moo(n):
   for i in range(n):
     print('moo')
+
+## Old-School Roman Numerals ##
 
 def old_roman(n):
   if n < 1 or n > 3000:
@@ -133,6 +144,8 @@ def old_roman(n):
       n -= letter[0]
       roman += letter[1]
   return roman
+
+## Modern Roman Numerals ##
 
 def new_roman(n):
   if n < 1 or n > 3000:
